@@ -89,7 +89,10 @@ docker compose down
 
 ### Requirements
 - Go 1.25.11+ (lihat `go.mod`)
-- PostgreSQL 14+ berjalan lokal
+- PostgreSQL 14+ berjalan lokal — atau cukup jalankan database via Docker:
+  ```bash
+  docker compose up -d postgres
+  ```
 - Port `8080` dan `5432` tersedia
 
 ### Langkah Menjalankan:
@@ -115,6 +118,9 @@ docker compose down
 ## Database Migration & Seeding
 
 ### Seeding Data
+
+> **Prasyarat:** Seeder **tidak** menjalankan migrasi. Jalankan aplikasi minimal sekali
+> (`make run`) agar tabel terbentuk, baru lakukan seeding.
 
 ```bash
 go run cmd/seeder/main.go

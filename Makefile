@@ -1,4 +1,4 @@
-.PHONY: run build docker-up docker-down sqlc test seed migrate-up migrate-down
+.PHONY: run build docker-up docker-down sqlc test seed
 
 run:
 	go run cmd/api/main.go
